@@ -37,12 +37,12 @@ router.post("/contacto", async (req, res) => {
         html: `${req.body.nombre} se contactó a través de la web y quiere información a este correo: ${req.body.email} <br> Además, hizo el siguiente comentario: ${req.body.mensaje} <br> Su tel es: ${req.body.telefono}`
     }
 
-    const transport = nodemailer.createTranspor({
+    const transport = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
         port: process.env.SMTP_PORT,
         auth: {
             user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASS,
+            pass: process.env.SMTP_PASS
         }
     }); //cierra trans
 

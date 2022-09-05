@@ -5,16 +5,16 @@ import axios from "axios";
 
 const ContactoPage = (props) => {
 
-  const initialForm= {
+  const initialForm = {
     nombre: "",
     email: "",
     telefono: "",
-    mensaje: "",
+    mensaje: ""
   }
 
   const [sending, setSending] = useState(false);
   const [msg, setMsg] = useState("");
-  const [formData, setFormData] =useState(initialForm);
+  const [formData, setFormData] = useState(initialForm);
 
   const handleChange = e => {
     const {name, value} = e.target;
@@ -38,11 +38,11 @@ const ContactoPage = (props) => {
 
 
     return (
-        <main className="holder contacto">
-      <div>
-        <h2>Contacto Rápido</h2>
-        <form action="/contacto" method="post" onSubmit={handleSubmit} className="formulario">
-          <p>
+      <main className="holder contacto">
+        <div>
+         <h2>Contacto Rápido</h2>
+         <form action="/contacto" method="post" onSubmit={handleSubmit} className="formulario">
+          <p>  
             <label for="nombre">Nombre</label>
             <input type="text" name="nombre" value={formData.nombre} onChange={handleChange}/> 
           </p>
@@ -58,14 +58,15 @@ const ContactoPage = (props) => {
             <label for="mensaje">Mensaje</label>
             <textarea name="mensaje" cols="30" rows="10" value={formData.mensaje} onChange={handleChange}></textarea>
           </p>
+          {sending ? <p>Enviando...</p> : null}
+          {msg ? <p>{msg}</p> : null }
           <p>
             <input type="submit" value="Enviar" />
           </p>
-          {sending ? <p>Enviando...</p>: null}
-        {msg ? <p>{msg}</p>:null}
         </form>
+        </div>       
+      
          
-      </div>
       <div className="datos">
         <h2>Otras vías de comunicación</h2>
         <p>
@@ -78,8 +79,9 @@ const ContactoPage = (props) => {
           
         </ul>
       </div>
-    </main>
-    );
+      </main>
+  );
+    
 }
 
 export default ContactoPage;
