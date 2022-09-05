@@ -1,0 +1,34 @@
+.holder h2{
+    color: #DCB239;
+   text-align: center;
+}
+
+.holder p {
+    color: #566573;
+    width: 75%;
+    margin-left: 10%;    
+}
+
+.alimentacion h3{
+    color: #DF744A;
+    margin-left: 10%;
+}
+
+.alimentacion p {
+    color: #566573;
+    width: 75%;
+}
+
+.org {
+    display: flex;
+    margin-left: 5%;
+    justify-content: center;
+    
+}
+
+.alimentacion ul {
+    color: #566573;
+    text-align: left;
+    margin-left: 25px;
+}
+

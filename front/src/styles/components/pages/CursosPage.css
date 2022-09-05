@@ -1,0 +1,30 @@
+.curso{
+    width: 75%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 0 auto 2% ;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+
+}
+
+.curso .info h3{
+    color: #DCB239;
+    font-weight: 500;
+    font-weight: bold;
+    border-bottom: 1px solid #DCB239;
+    padding-bottom: 10px;
+}
+
+.curso .info p{
+    font-size: 13px;
+    color: #566573;
+}
+
+.curso img{
+    border-radius: 13px;
+    display: block;
+    max-width: 225px;
+}

@@ -1,0 +1,16 @@
+.bienvenidos{
+    width: 75%;
+    padding-right: 10px;
+    box-sizing: border-box;
+    margin: 5% 0 5% 12.5%;
+    color: #DF744A;
+    justify-content: center;
+    
+}
+
+.bienvenidos p{
+    font-size: 20px;
+    text-align: justify;    
+    color: #566573;
+}
+
