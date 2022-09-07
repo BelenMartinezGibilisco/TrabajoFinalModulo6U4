@@ -4,6 +4,7 @@
 }
 
 .holder p {
+    font-size: 20px;
     color: #566573;
     width: 75%;
     margin-left: 10%;    
@@ -12,6 +13,7 @@
 .alimentacion h3{
     color: #DF744A;
     margin-left: 10%;
+
 }
 
 .alimentacion p {
@@ -20,15 +22,16 @@
 }
 
 .org {
-    display: flex;
+    display: block;
     margin-left: 5%;
-    justify-content: center;
+    justify-content: space-around;
     
 }
 
 .alimentacion ul {
     color: #566573;
+    font-size: 20px;
     text-align: left;
-    margin-left: 25px;
+    margin-left: 10%;
 }
 

@@ -10,8 +10,7 @@
 .recetas h2{
     margin-bottom: 25px;
     text-align: center;
-    /*font-size: 60px;
-    background-color: white;*/
+    font-size: 60px;    
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 10px;
@@ -19,13 +18,14 @@
 }
 
 .containerrecetas {
-    display: flex;
-    justify-content: space-between;
+    display: inline-flex;
+    justify-content: center;
     margin: 25px;
-    
+       
 }
 
 .receta{
+    align-items: stretch;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 30%;
@@ -37,7 +37,7 @@
 
 .receta img{
     border-radius: 50%;
-    max-width: 60%;
+    max-width: 80%;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 
 }
@@ -50,5 +50,5 @@
 
 .receta p{
     color: #666;
-    font-size: 10px;
+    font-size: 20px;
 }

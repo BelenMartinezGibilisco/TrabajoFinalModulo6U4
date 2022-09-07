@@ -26,7 +26,8 @@ return (
           <p>Cargando ...</p>
         ) : (
             recetas.map(item => <RecetaItem key={item.id}
-              title={item.titulo} subtitle={item.ingredientes} imagen={item.imagen} body={item.preparacion}/>)
+              title={item.titulo} subtitle={item.ingredientes} imagen={item.imagen} 
+              body={item.preparacion}/>)
         )}
       </section>
       )

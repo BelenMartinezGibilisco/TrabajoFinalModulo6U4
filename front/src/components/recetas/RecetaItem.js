@@ -3,17 +3,16 @@ const RecetaItem = (props) => {
     const { title, subtitle, imagen, body} = props;
     
     return (
-        <div className="recetas">
-            <div>
+        <div className="containerrecetas">
+            <div className="receta">
             <h2>{title}</h2>
             <img src={imagen}/>
-            </div>
             <div>
-                <div>
-                    <li>{subtitle}</li>
-                </div> 
-                <div dangerouslySetInnerHTML={{ __html: body }}/>
-                <hr />
+                    <p>{subtitle}</p>
+                </div>
+            </div>
+            <div className="receta" >
+                <p dangerouslySetInnerHTML={{ __html: body }}/>
                 </div>
             
         </div>

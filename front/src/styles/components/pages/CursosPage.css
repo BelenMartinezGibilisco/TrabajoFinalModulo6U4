@@ -19,8 +19,9 @@
 }
 
 .curso .info p{
-    font-size: 13px;
+    font-size: 20px;
     color: #566573;
+    text-align: justify;
 }
 
 .curso img{
