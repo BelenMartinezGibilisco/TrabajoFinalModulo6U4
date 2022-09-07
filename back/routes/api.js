@@ -1,32 +1,32 @@
 var express = require("express");
 var router = express.Router();
-var novedadesModel = require("./../models/novedadesModel");
+var recetasModel = require("../models/recetasModel");
 var cloudinary = require("cloudinary").v2;
 var nodemailer = require("nodemailer");
 
-router.get("/novedades", async function (req, res, next) {
-    let novedades = await novedadesModel.getNovedades();    
+router.get("/recetas", async function (req, res, next) {
+    let recetas = await recetasModel.getRecetas();    
     
-    novedades = novedades.map( novedades => {
-        if (novedades.img_id) {
-            const imagen = cloudinary.url(novedades.img_id, {
+    recetas = recetas.map( recetas => {
+        if (recetas.img_id) {
+            const imagen = cloudinary.url(recetas.img_id, {
                 width:960,
                 height:200,
                 crop: "fill"
             });
             return {
-                ...novedades,
+                ...recetas,
                 imagen
             }
         } else {
             return {
-                ...novedades,
+                ...recetas,
                 imagen: ""
             }
         }
     });   
         
-    res.json(novedades);
+    res.json(recetas);
 });
 
 

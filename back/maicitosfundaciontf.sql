@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 04, 2022 at 06:08 PM
+-- Generation Time: Sep 07, 2022 at 01:06 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -24,24 +24,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `novedades`
+-- Table structure for table `recetas`
 --
 
-DROP TABLE IF EXISTS `novedades`;
-CREATE TABLE IF NOT EXISTS `novedades` (
+DROP TABLE IF EXISTS `recetas`;
+CREATE TABLE IF NOT EXISTS `recetas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(250) NOT NULL,
   `ingredientes` text NOT NULL,
   `preparacion` text NOT NULL,
   `img_id` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `novedades`
+-- Dumping data for table `recetas`
 --
 
-INSERT INTO `novedades` (`id`, `titulo`, `ingredientes`, `preparacion`, `img_id`) VALUES
+INSERT INTO `recetas` (`id`, `titulo`, `ingredientes`, `preparacion`, `img_id`) VALUES
 (18, 'Galletitas de almendras y maíz', '130 gramos harina de maíz \r\n70 gramos almidón de maíz Maizena \r\n75 gramos almendras molidas \r\n125 gramos manteca \r\n90 gramos azúcar impalpable \r\n1 huevo \r\n1 yema \r\nesencia de vainilla ', 'Batir la manteca a temperatura ambiente hasta formar una crema, agregar el azúcar y seguir batiendo hasta integrar, agregar la esencia de vainilla y el huevo batido junto con la yema.\r\nUna vez que esté todo bien integrado incorporar de a poco la harina de maíz, la Maizena y las almendras molidas.\r\nVa a quedar una masa bastante pegajosa y difícil de maniobrar.\r\nPara estirarla deberán estirar papel film sobre la mesada, ubicar la masa encima y volver a taparlo con otra tira de papel film.\r\nRecién ahí podrá estirarla con el palo de amasar, una vez que tengan una masa de aprox. 1 cm de espesor deberán llevarla a la heladera por al menos 2 horas hasta que endurezca.\r\nPasado ese tiempo, con un cortapasta cortar las galletitas y llevarlas a una placa enmantecada forrada con papel manteca, procuren dejar 3 cm por lo menos entre si para que no se peguen.\r\nDejar cocinando por aproximadamente 15 minutos o hasta que se doren los bordes.\r\nYa podés comer estas deliciosas galletitas sin tacc  ', 'q2fhgev5pvcim012cnlu'),
 (34, 'Ñoquis rellenos', '400g de papa \r\n300g de calabaza \r\n150g de Maizena \r\n1 huevo \r\nc/n de queso rallado \r\nPara la salsa:\r\n100g de espinaca cocida (1/2 taza) \r\n1 diente de ajo \r\n4 cdas de queso untable \r\n2 cucharadas de leche \r\n', 'Cortar en cubos la papa y la calabaza y cocinar al microondas hasta que estén tiernas. Hacer un puré en seco (sin leche ni manteca)\r\nFormar una corona con el pure, colocar el huevo, el queso rallado y los condimentos en el centro\r\nAgregar la Maizena e integrar hasta que quede un bollo liso y uniforme\r\nAgarrar parte de la masa, colocar un cubo de queso fresco en el centro y cerrar bien\r\nColocar en una placa con Maizena y llevar a la heladera por 15 minutos\r\nHervir en abundante agua. Cuando flotan, dejar 1 minuto y retirar con una espumadera\r\nCómo hacer la salsa:\r\nEscurrir bien la espinaca, picar y saltear con el ajo picado\r\nIncorporar la leche y el queso untable y condimentar a gusto', 'emyj9khsvf8hzertdwy6'),
 (20, 'Empanadas sin tacc', '500 gramos de carne picada \r\n1/2 kilogramo cebolla picada \r\n1 diente ajo picado \r\n2 huevos duros picados \r\n3 cucharadas almidón de maíz Maizena \r\n1 lata de tomate sin tacc \r\naceite cantidad necesaria \r\nají molido seco cantidad necesaria sin tacc \r\norégano seco cantidad necesaria sin tacc \r\ncomino en polvo cantidad necesaria sin tacc \r\npimentón en polvo cantidad necesaria sin tacc \r\n12 tapa para empanada sin tacc \r\n1 huevo para pintar ', 'En una cacerola saltear la cebolla, la cebolla de verdeo y el ajo.\r\nUna vez que las verduras estén bien cocidas agregar la carne picada junto al tomate en conserva (lata). Cocinar por 10 minutos aprox.\r\nAgregar la Maizena® disuelta en el agua fría y cocinar por 1 minuto más. Condimentar con las especias y el huevo duro.\r\nReservar y enfriar.\r\nArmar las empanadas, repulgar y pintar con el huevo batido.\r\nCocinar en horno a 200°C hasta que resulten bien doradas.    ', 'lhui2irsva1ggjmed6h6'),

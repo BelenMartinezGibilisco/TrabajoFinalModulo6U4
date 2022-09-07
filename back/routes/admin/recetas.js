@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var novedadesModel = require("../../models/novedadesModel");
+var recetasModel = require("../../models/recetasModel");
 var util = require("util");
 var cloudinary = require("cloudinary").v2;
 const uploader = util.promisify(cloudinary.uploader.upload);
@@ -8,31 +8,31 @@ const destroy = util.promisify(cloudinary.uploader.destroy);
 
 router.get("/", async function (req, res, next) {
 
-    var novedades = await novedadesModel.getNovedades();
+    var recetas = await recetasModel.getRecetas();
 
-    novedades = novedades.map(novedad => {
-        if (novedad.img_id) {
-            const imagen = cloudinary.image(novedad.img_id, {
+    recetas = recetas.map(receta => {
+        if (receta.img_id) {
+            const imagen = cloudinary.image(receta.img_id, {
                 width: 100,
                 heigth: 100,
                 crop: "fill"
             });
             return {
-                ...novedad,
+                ...receta,
                 imagen
             }
         } else {
             return {
-                ...novedad,
+                ...receta,
                 imagen:""
             }
         }
     });
 
-    res.render("admin/novedades", {
+    res.render("admin/recetas", {
     layout:"admin/layout",
     usuario: req.session.nombre,
-    novedades
+    recetas
     });
 });
 
@@ -52,12 +52,12 @@ router.post("/agregar", async (req, res, next) =>{
 
         if (req.body.titulo != "" && req.body.ingredientes != "" && req.body.preparacion != "") {
            
-            await novedadesModel.insertNovedad({
+            await recetasModel.insertReceta({
                 ...req.body,
                 img_id
             });
            
-            res.redirect("/admin/novedades")
+            res.redirect("/admin/recetas")
         
         } else {
             res.render("admin/agregar", {
@@ -69,7 +69,7 @@ router.post("/agregar", async (req, res, next) =>{
         console.log(error)
         res.render("admin/agregar", {
             layout: "admin/layout",
-            error: true, message: "No se cargó la novedad"
+            error: true, message: "No se cargó la receta"
         });
     }
 });
@@ -77,20 +77,20 @@ router.post("/agregar", async (req, res, next) =>{
 router.get("/eliminar/:id", async (req, res, next) => {
     var id = req.params.id;
 
-    let novedad = await novedadesModel.getNovedadById(id);
-    if (novedad.img_id) {
-        await (destroy(novedad.img_id));
+    let receta = await recetasModel.getRecetaById(id);
+    if (receta.img_id) {
+        await (destroy(receta.img_id));
     }
-    await novedadesModel.deleteNovedadById(id);
-    res.redirect("/admin/novedades")
+    await recetasModel.deleteRecetaById(id);
+    res.redirect("/admin/recetas")
 });
 
 router.get("/modificar/:id", async (req, res, next) => {
     let id = req.params.id;
-    let novedad = await novedadesModel.getNovedadById(id);
+    let receta = await recetasModel.getRecetaById(id);
     res.render("admin/modificar", {
         layout: "admin/layout",
-        novedad
+        receta
     });
 });
 
@@ -122,15 +122,15 @@ router.post("/modificar", async (req, res, next) => {
 
         }
 
-    await novedadesModel.modificarNovedadById(obj, req.body.id);
-    res.redirect("/admin/novedades");
+    await recetasModel.modificarRecetaById(obj, req.body.id);
+    res.redirect("/admin/recetas");
     }
 
     catch (error) {
         console.log(error)
         res.render("admin/modificar", {
             layout: "admin/layout",
-            error: true, message: "No se modificó la novedad"
+            error: true, message: "No se modificó la receta"
         })
     }
     })

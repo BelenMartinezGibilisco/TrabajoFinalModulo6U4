@@ -7,13 +7,12 @@ var fileUpload = require("express-fileupload");
 var cors = require("cors");
 
 require("dotenv").config();
-
 var session = require("express-session");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require("./routes/admin/login");
-var adminRouter = require("./routes/admin/novedades");
+var adminRouter = require("./routes/admin/recetas");
 var apiRouter = require("./routes/api");
 
 var app = express();
@@ -30,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use("/api", cors(), apiRouter);
 
 app.use(session({
-  secret: "letrasynumeros",
+  secret:"letrasynumeros",
   resave: false,
   saveUninitialized: true
 }))
@@ -38,15 +37,15 @@ app.use(session({
 secured = async(req, res, next) => {
   try {
     console.log(req.session.id_usuario);
-    if (req.session.id_usuario) {
-    next();    
-  } else {
-    res.redirect("/admin/login");
-  } 
-  }catch (error) {
-    console.log(error);  
+    if(req.session.id_usuario){
+      next();
+    } else {
+      res.redirect("/admin/login");
+    }
+  } catch(error) {
+    console.log(error);
   }
-} 
+}
 
 app.use(fileUpload({
   useTempFiles: true,
@@ -56,7 +55,8 @@ app.use(fileUpload({
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/admin/login", loginRouter);
-app.use("/admin/novedades", secured, adminRouter); 
+app.use("/admin/recetas", secured, adminRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

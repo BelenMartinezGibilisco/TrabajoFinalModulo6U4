@@ -1,22 +1,21 @@
 import "../styles/components/pages/RecetasPage.css";
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import NovedadItem from "../components/novedades/NovedadItem";
+import RecetaItem from "../components/recetas/RecetaItem";
 
 const RecetasPage = (props) => {
-
       const [loading, setLoading] =useState(false);
-      const [novedades, setNovedades] = useState ([]);
+      const [recetas, setRecetas] = useState([]);
 
-      useEffect (() => {
-          const cargarNovedades = async  () => {
+      useEffect(() => {
+          const cargarRecetas = async  () => {
           setLoading(true);
-          const response = await axios.get("http://localhost3000/api/novedades");
-          setNovedades(response.data);
+          const response = await axios.get("http://localhost3000/api/recetas");
+          setRecetas(response.data);
           setLoading(false);
       };
       
-     cargarNovedades();
+     cargarRecetas();
 
 }, []);
 
@@ -26,12 +25,11 @@ return (
         {loading ? (
           <p>Cargando ...</p>
         ) : (
-            novedades.map(item => <NovedadItem key={item.id}
-              title={item.titulo} subtitle={item.ingredientes} body={item.preparacion}
-              />)
+            recetas.map(item => <RecetaItem key={item.id}
+              title={item.titulo} subtitle={item.ingredientes} imagen={item.imagen} body={item.preparacion}/>)
         )}
       </section>
-      );
-    }
+      )
+    };
 
 export default RecetasPage;

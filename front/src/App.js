@@ -10,7 +10,7 @@ import HomePage from "./pages/HomePage";
 import NosotrosPage from "./pages/NosotrosPage";
 import InfoPage from "./pages/InfoPage";
 import CursosPage from "./pages/CursosPage";
-import RecetasPage from "./pages/RecetasPage"
+import RecetasPage from "./pages/RecetasPage";
 import ContactoPage from "./pages/ContactoPage";
 
 function App() {

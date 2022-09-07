@@ -14,7 +14,7 @@
         <h3>Listado de Recetas</h3>   
     </div>
     <div class="col-2 text-rigth">
-        <a href="/admin/novedades/agregar" class="btn btn-success"><i class="fa fa-plus"></i>Nuevo</a>
+        <a href="/admin/recetas/agregar" class="btn btn-success"><i class="fa fa-plus"></i>Nuevo</a>
     </div>
 </div>
 {{!--Fin Fila 2--}}
@@ -33,7 +33,7 @@
                 </tr>
             </thead>
             <tbody>
-                {{#each novedades}}
+                {{#each recetas}}
                 <tr>
                     <th scope="row">{{id}}</th>
                     <td>{{titulo}}</td>                    
@@ -41,8 +41,8 @@
                     <td>{{preparacion}}</td>
                     <td>{{{imagen}}}</td> 
                     <td class="text-center">
-                        <a href="/admin/novedades/modificar/{{id}}" title="Editar" class="btn btn-sm btn-secondary"><i class="fa fa-pencil"></i></a>
-                        <a href="/admin/novedades/eliminar/{{id}}" title="Eliminar" class="btn btn-sm btn-secondary"><i class="fa fa-trash"></i></a>
+                        <a href="/admin/recetas/modificar/{{id}}" title="Editar" class="btn btn-sm btn-secondary"><i class="fa fa-pencil"></i></a>
+                        <a href="/admin/recetas/eliminar/{{id}}" title="Eliminar" class="btn btn-sm btn-secondary"><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>
                 {{/each}}
