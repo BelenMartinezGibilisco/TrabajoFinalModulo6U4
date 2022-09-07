@@ -10,7 +10,7 @@ const RecetasPage = (props) => {
       useEffect(() => {
           const cargarRecetas = async  () => {
           setLoading(true);
-          const response = await axios.get("http://localhost3000/api/recetas");
+          const response = await axios.get("http://localhost:3000/api/recetas");
           setRecetas(response.data);
           setLoading(false);
       };

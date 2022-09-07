@@ -4,11 +4,18 @@ const RecetaItem = (props) => {
     
     return (
         <div className="recetas">
-            <h1>{title}</h1>
-            <h2>{subtitle}</h2> 
+            <div>
+            <h2>{title}</h2>
             <img src={imagen}/>
-            <div dangerouslySetInnerHTML={{ __html: body }}/>
-            <hr />
+            </div>
+            <div>
+                <div>
+                    <li>{subtitle}</li>
+                </div> 
+                <div dangerouslySetInnerHTML={{ __html: body }}/>
+                <hr />
+                </div>
+            
         </div>
     );
 }
